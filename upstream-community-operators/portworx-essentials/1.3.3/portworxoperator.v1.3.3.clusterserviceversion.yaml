@@ -1,13 +1,13 @@
 apiVersion: operators.coreos.com/v1alpha1
 kind: ClusterServiceVersion
 metadata:
-  name: portworx-essentials.v1.3.2
+  name: portworx-essentials.v1.3.3
   namespace: placeholder
   annotations:
     capabilities: Auto Pilot
     categories: "Storage"
     description: Free forever cloud native storage solution
-    containerImage: portworx/px-operator:1.3.2
+    containerImage: openstorage/openstorage-operator:1.3.3-dev
     repository: https://github.com/libopenstorage/operator
     createdAt: 2020-07-06T08:00:00Z
     support: Portworx, Inc
@@ -36,7 +36,7 @@ metadata:
       ]
 spec:
   displayName: Portworx Essentials
-  version: 1.3.2
+  version: 1.3.3
   minKubeVersion: "1.12.0"
   maturity: stable
   maintainers:
@@ -224,7 +224,7 @@ spec:
                     topologyKey: kubernetes.io/hostname
               containers:
               - name: portworx-operator
-                image: portworx/px-operator:1.3.2
+                image: openstorage/openstorage-operator:1.3.3-dev
                 imagePullPolicy: Always
                 command:
                 - /operator
